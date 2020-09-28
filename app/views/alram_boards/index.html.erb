@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Alram Boards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Board</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @alram_boards.each do |alram_board| %>
+      <tr>
+        <td><%= alram_board.user_id %></td>
+        <td><%= alram_board.board_id %></td>
+        <td><%= link_to 'Show', alram_board %></td>
+        <td><%= link_to 'Edit', edit_alram_board_path(alram_board) %></td>
+        <td><%= link_to 'Destroy', alram_board, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Alram Board', new_alram_board_path %>

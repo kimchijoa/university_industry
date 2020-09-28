@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @alram_test.title %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @alram_test.desc %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @alram_test.user_id %>
+</p>
+
+<ul>
+<% @comment.each do |row| %>
+	<li><%= row.comment%></li>
+<% end %>	
+</ul>
+
+
+<%= render 're_posts/form', re_post: @re_post %>
+
+<%= link_to 'Edit', edit_alram_test_path(@alram_test) %> |
+<%= link_to 'Back', alram_tests_path %>

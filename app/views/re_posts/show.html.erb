@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @re_post.user_id %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @re_post.comment %>
+</p>
+
+<p>
+  <strong>Alram test:</strong>
+  <%= @re_post.alram_test_id %>
+</p>
+
+<%= link_to 'Edit', edit_re_post_path(@re_post) %> |
+<%= link_to 'Back', re_posts_path %>

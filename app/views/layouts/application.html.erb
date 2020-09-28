@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GoormRailsApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+	<% if user_signed_in? %>
+	 <%= link_to "메인으로", root_path %>
+	 <%= link_to "로그아웃", destroy_user_session_path, method: :delete %>
+	  | 이메일 : <%= current_user.email %>
+	<% else %>
+	    <%= link_to "로그인", user_session_path %>
+  		<%= link_to "회원가입", "/users/sign_up" %>
+	<% end %>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Re Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Comment</th>
+      <th>Alram test</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @re_posts.each do |re_post| %>
+      <tr>
+        <td><%= re_post.user_id %></td>
+        <td><%= re_post.comment %></td>
+        <td><%= re_post.alram_test_id %></td>
+        <td><%= link_to 'Show', re_post %></td>
+        <td><%= link_to 'Edit', edit_re_post_path(re_post) %></td>
+        <td><%= link_to 'Destroy', re_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Re Post', new_re_post_path %>

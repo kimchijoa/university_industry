@@ -1,0 +1,15 @@
+<%= form_with(model: re_post, local: true) do |form| %>
+
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field :alram_test_id, value: @alram_test.id %>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_field :comment %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
